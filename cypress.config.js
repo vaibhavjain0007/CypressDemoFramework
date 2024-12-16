@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 const ExcelJS = require('exceljs');
 
 module.exports = defineConfig({
+  projectId: 'rnthpj',
   e2e: {
     baseUrl: 'https://www.amazon.in',
     reporter: 'cypress-mochawesome-reporter', // for html reports
@@ -18,12 +19,12 @@ module.exports = defineConfig({
           await workbook.xlsx.readFile(filePath);
           const sheet = workbook.worksheets[0];  // Get the first sheet
           const data = [];
-          
+
           sheet.eachRow({ includeEmpty: true }, (row, rowNumber) => {
             // Push each row as an object
             if (rowNumber > 1) {
               data.push({
-                username: row.values.at(1), 
+                username: row.values.at(1),
                 password: row.values.at(2).text
               });
             }
@@ -41,7 +42,7 @@ module.exports = defineConfig({
     specPattern: 'cypress/e2e/*.js', // include .js files
     excludeSpecPattern: [
       'cypress/e2e/*.*.js',
-     ] // Exclude .cy.js and same pattern files
+    ] // Exclude .cy.js and same pattern files
   },
   env: {
     "username": '9685075089',
