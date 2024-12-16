@@ -18,7 +18,11 @@ class HomePage {
     }
 
     searchProduct(productName) {
-        this.search.type(productName )
+        this.search.type(productName)
+    }
+
+    enterOnSearch() {
+        this.search.type('{enter}')
     }
 
     navigateToOrders() {
