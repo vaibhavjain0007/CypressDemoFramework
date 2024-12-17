@@ -30,5 +30,4 @@ export class ProductPage {
     navigateToWishlist() {
         return cy.get(selectors.productPage.viewWishlistLink).click();
     }
-    
 }

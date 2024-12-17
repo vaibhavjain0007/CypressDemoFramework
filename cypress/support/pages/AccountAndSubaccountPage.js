@@ -46,7 +46,6 @@ export class OrdersPage {
                 return cy.wrap($el).click()
             }
         })
-        // cy.get(selectors.orders.timeFilter).invoke('show').select(timeFilter)
     }
 }
 
